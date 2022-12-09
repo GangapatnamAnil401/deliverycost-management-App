@@ -14,6 +14,11 @@ public class VoucherCodeConfig {
 	
 	private String requestUrl;
 	private String apikey;
+	private Double weightReject;
+	private Double heavyParcel;
+	private Double smallParcel;
+	private Double mediumParcel;
+
 	
 	/**
 	 * @return the requestUrl
@@ -38,5 +43,53 @@ public class VoucherCodeConfig {
 	 */
 	public void setApikey(String apikey) {
 		this.apikey = apikey;
+	}
+	/**
+	 * @return the weightReject
+	 */
+	public Double getWeightReject() {
+		return weightReject;
+	}
+	/**
+	 * @param weightReject the weightReject to set
+	 */
+	public void setWeightReject(Double weightReject) {
+		this.weightReject = weightReject;
+	}
+	/**
+	 * @return the heavyParcel
+	 */
+	public Double getHeavyParcel() {
+		return heavyParcel;
+	}
+	/**
+	 * @param heavyParcel the heavyParcel to set
+	 */
+	public void setHeavyParcel(Double heavyParcel) {
+		this.heavyParcel = heavyParcel;
+	}
+	/**
+	 * @return the smallParcel
+	 */
+	public Double getSmallParcel() {
+		return smallParcel;
+	}
+	/**
+	 * @param smallParcel the smallParcel to set
+	 */
+	public void setSmallParcel(Double smallParcel) {
+		this.smallParcel = smallParcel;
+	}
+	/**
+	 * @return the mediumParcel
+	 */
+	public Double getMediumParcel() {
+		return mediumParcel;
+	}
+	/**
+	 * @param mediumParcel the mediumParcel to set
+	 */
+	public void setMediumParcel(Double mediumParcel) {
+		this.mediumParcel = mediumParcel;
 	}
 }

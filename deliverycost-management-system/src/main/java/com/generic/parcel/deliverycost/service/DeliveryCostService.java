@@ -37,16 +37,16 @@ public class DeliveryCostService {
 		ResponseDeliveryCost responseDeliveryCost = new ResponseDeliveryCost();
 		double discountCost = 0.0; 
 		double volume = item.getHeight()*item.getLength()*item.getWidth();
-		if(item.getWeight() > 50.00) {
+		if(item.getWeight() > voucherconfig.getWeightReject()) {
 			responseDeliveryCost.setErrorMsg(DeliveryCostConstants.EXCEED_WEIGHT);
 			return responseDeliveryCost;
-		}else if(item.getWeight() < 50.00 && item.getWeight() > 10) {
+		}else if(item.getWeight() < voucherconfig.getWeightReject() && item.getWeight() > voucherconfig.getHeavyParcel()) {
 			responseDeliveryCost.setDeliveryCost(20*item.getWeight());
-		}else if(volume < 1500) {
+		}else if(volume < voucherconfig.getSmallParcel()) {
 			responseDeliveryCost.setDeliveryCost(0.03*volume);
-		}else if(volume > 1500 && volume < 2500) {
+		}else if(volume > voucherconfig.getSmallParcel() && volume < voucherconfig.getMediumParcel()) {
 			responseDeliveryCost.setDeliveryCost(0.04*volume);
-		}else if(volume > 2500)
+		}else if(volume > voucherconfig.getMediumParcel())
 			responseDeliveryCost.setDeliveryCost(0.05*volume);
 
 		if(StringUtils.isNotEmpty(voucherCode)) {
